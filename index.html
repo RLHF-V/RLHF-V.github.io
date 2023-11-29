@@ -347,22 +347,30 @@
 </script> -->
 
 
-<section class="section">
-  <div class="container is-max-desktop">
+<section class="section interpolation-panel">
+  <div class="container">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-11">
+        <br>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Multimodal Large Language Models (MLLMs) have recently demonstrated impressive capabilities in multimodal understanding, reasoning, and interaction. However, existing MLLMs prevalently suffer from serious hallucination problems, generating text that is not factually grounded in associated images. The problem makes existing MLLMs untrustworthy and thus impractical in real-world (especially high-stakes) applications.
-            <br>
-            <br>
-            To address the challenge, we present <b>RLHF-V</b>, which enhances MLLM trustworthiness via behavior alignment from fine-grained correctional human feedback. Specifically, RLHF-V collects human preference in the form of segment-level corrections on hallucinations, and performs <b>dense direct preference optimization</b> over the human feedback. Comprehensive experiments on five benchmarks in both automatic and human evaluation show that, RLHF-V can enable substantially more trustworthy MLLM behaviors with promising data and computation efficiency.
-            <br>
-            <br>
-            Remarkably, using <b>1.4k</b> annotated data samples, RLHF-V significantly reduces the hallucination rate of the base MLLM by <b>34.8%</b>, outperforming the concurrent LLaVA-RLHF trained on 10k annotated data. The final model achieves state-of-the-art performance in trustworthiness among open-source MLLMs, and shows better robustness than GPT-4V in preventing hallucinations aroused from over-generalization.
-            <br>
+            Existing Multimodal Large Language Models prevalently suffer from serious <b>hallucination</b> problems, generating text that is not factually grounded in associated images. Our <b>RLHF-V framework</b> enhances MLLM trustworthiness via behavior alignment from fine-grained correctional human feedback.
+            <ul>
+              <li>
+                <b>1.4K Fine-Grained and Diverse Human Preference Data</b>: We collect 1.4K pieces of segment-level corrections of human feedback on hallucinations, covering hallucination types including objects (41.2%), positions (20.3%), numbers (16.5%), attributes (10%), actions (5.3%), and others (6.8%).
+              </li>
+              <li>
+                <b>High Data Efficiency and Scalability</b>: With just 1.4K annotated data, we achieved 34.8% reduction in model hallucinations. Moreover, the decrease in hallucinations becomes more significant as more data is used.
+              </li>
+              <li>
+                <b>Enhanced Performance and Computational Efficiency with DDPO</b>: Our Dense Direct Preference Optimization (DDPO) algorithm can better exploit the fine-grained human feedback, allowing training in under 1 hour on 8 A100 GPUs.
+              </li>
+              <li>
+                <b>Outstanding Trustworthiness without Compromising Helpfulness</b>: Our model surpasses existing open-source MLLMs in reducing hallucinations rates, mitigates hallucination from over-generalization, and maintains informativeness.
+              </li>
+            </ul>
 <!--             <br>
             The
             </b> -->
@@ -376,7 +384,6 @@
           <p style="font-family:Times New Roman"></p>
         </h3> -->
     <br>
-    <br>
     <!-- Paper video. -->
     <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -386,7 +393,8 @@
         </div>
       </div>
     </div> -->
-
+  </div>
+</section>
 
 <!-- <section class="hero is-small is-light">
     <div class="hero-body"> -->
@@ -444,6 +452,8 @@
       </div>
     </div> -->
 
+<section class="section">
+  <div class="container is-max-desktop">
     <!--/ Paper video. -->
     <br>
     <br>
@@ -477,6 +487,7 @@
         <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
         <h2 class="title is-3">Experiments</h2>
+        <br>
         <div class="content has-text-justified">
           <p>
             <b>Low hallucination rate while being informative</b>:
@@ -502,6 +513,9 @@
         </div>
         <img id="model" width="40%" src="images/data_scaling.png">
 
+        <br>
+        <br>
+
         <div class="content has-text-justified">
           <p>
             <b>More resistent towards over-generalization</b>:
@@ -514,10 +528,6 @@
 
       </div>
     </div>
-    <br>
-    <br>
-
-
 
   </div>
 </section>
@@ -538,9 +548,8 @@
 }
 </code></pre>
   </div>
+  <br>
 </section>
-
-
 
 
 <section class="section">
@@ -551,23 +560,60 @@
     </div>
   </div>
   <!--/ Results. -->
-<!-- <div class="container is-max-desktop">
-</section> -->
+  <div class="container is-max-desktop">
 
+    <!-- <section class="section"> -->
+    <!-- <div id="main">
+      <div align="center" ><div align="center" ><img src="demos/case1.png" width="75%" alt=""></div></div>
+      <div align="center" ><div align="center" ><img src="demos/case2.png" width="75%" alt=""></div></div>
+      <div align="center" ><div align="center" ><img src="demos/case3-1.png" width="75%" alt=""></div></div>
+      <div align="center" ><div align="center" ><img src="demos/case3-2.png" width="75%" alt=""></div></div>
+      <div align="center" ><div align="center" ><img src="demos/case4.png" width="75%" alt=""></div></div>
+      <div align="center" ><div align="center" ><img src="demos/case5.png" width="75%" alt=""></div></div>
+      <!-- <div class="box"><div class="pic"><img src="demos/p7.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/p8.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/p9.png" alt=""></div></div>
+    </div> -->
 
-<!-- <section class="section"> -->
-<div id="main">
-  <div align="center" ><div align="center" ><img src="demos/case1.png" width="80%" alt=""></div></div>
-  <div align="center" ><div align="center" ><img src="demos/case2.png" width="80%" alt=""></div></div>
-  <div align="center" ><div align="center" ><img src="demos/case3-1.png" width="80%" alt=""></div></div>
-  <div align="center" ><div align="center" ><img src="demos/case3-2.png" width="80%" alt=""></div></div>
-  <div align="center" ><div align="center" ><img src="demos/case4.png" width="80%" alt=""></div></div>
-  <div align="center" ><div align="center" ><img src="demos/case5.png" width="80%" alt=""></div></div>
-  <!-- <div class="box"><div class="pic"><img src="demos/p7.png" alt=""></div></div>
-  <div class="box"><div class="pic"><img src="demos/p8.png" alt=""></div></div>
-  <div class="box"><div class="pic"><img src="demos/p9.png" alt=""></div></div> -->
-</div>
-
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <div class="content has-text-justified">
+          <ul>
+            <li><b>Case 1: Short-form QA</b>: Our model can give a more accurate answer in short-form QA.</li>
+          </ul>
+        </div>
+        <img src="demos/case1.png" width="90%" alt="">
+        <div class="content has-text-justified">
+          <ul>
+            <li><b>Case 2: Long-form QA</b>: Our model can generate informative image description with less hallucinations.</li>
+          </ul>
+        </div>
+        <img src="demos/case2.png" width="90%" alt="">
+        <div class="content has-text-justified">
+          <ul>
+            <li><b>Case 3: Long-form QA</b>: Our model can provide detailed reasoning with less hallucinations.</li>
+          </ul>
+        </div>
+        <img src="demos/case3-1.png" width="90%" alt="">
+        <img src="demos/case3-2.png" width="90%" alt="">
+        <div class="content has-text-justified">
+          <ul>
+            <li><b>Case 4: Long-form QA</b>: Our model is more resistent towards over-generalization.</li>
+          </ul>
+        </div>
+        <img src="demos/case4.png" width="90%" alt="">
+        <div class="content has-text-justified">
+          <ul>
+            <li><b>Case 5: Long-form QA</b>: Our model is more resistent towards over-generalization.</li>
+          </ul>
+        </div>
+        <img src="demos/case5.png" width="90%" alt="">
+      </div>
+      <!-- <div class="box"><div class="pic"><img src="demos/p7.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/p8.png" alt=""></div></div>
+      <div class="box"><div class="pic"><img src="demos/p9.png" alt=""></div></div> -->
+    </div>
+  </div>
 </section>
 
 
