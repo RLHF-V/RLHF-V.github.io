@@ -104,7 +104,7 @@
               Ganqu Cui<sup>1</sup>,
             </span>
             <span class="author-block">
-              Jinyi Hu<sup>1</sup>,
+              <a href="https://jameshujy.github.io/" style="color:#008AD7;font-weight:normal;">Jinyi Hu<sup>1</sup></a>,
             </span>
             <span class="author-block">
               <a href="http://nlp.csai.tsinghua.edu.cn/~lzy/" style="color:#008AD7;font-weight:normal;">Zhiyuan Liu<sup>1*</sup></a>,
@@ -403,22 +403,11 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            While developing a new vision-language LLM (VL-LLM) by pre-training on tremendous image-text pairs from scratch can be exceedingly resource-consuming, connecting an existing LLM with a comparatively lightweight visual prompt generator (VPG) becomes a feasible paradigm.
-            However, further tuning the VPG part of the VL-LLM still suffers from indispensable computational costs, i.e., requiring thousands of GPU hours and millions of training data.
-            One alternative solution is to transfer an existing VPG from any existing VL-LLMs for the target VL-LLM.
+            Multimodal Large Language Models (MLLMs) have recently demonstrated impressive capabilities in multimodal understanding, reasoning, and interaction. However, existing MLLMs prevalently suffer from serious hallucination problems, generating text that is not factually grounded in associated images. The problem makes existing MLLMs untrustworthy and thus impractical in real-world (especially high-stakes) applications.
             <br>
+            To address the challenge, we present <b>RLHF-V</b>, which enhances MLLM trustworthiness via behavior alignment from fine-grained correctional human feedback. Specifically, RLHF-V collects human preference in the form of segment-level corrections on hallucinations, and performs <b>dense direct preference optimization</b> over the human feedback. Comprehensive experiments on five benchmarks in both automatic and human evaluation show that, RLHF-V can enable substantially more trustworthy MLLM behaviors with promising data and computation efficiency.
             <br>
-            In this work, we for the first time investigate the VPG transferability across LLMs, and explore a solution to reduce the cost of VPG transfer.
-            We first study the VPG transfer across different LLM sizes (e.g., small-to-large), and across different LLM types, through which we diagnose the key factors to maximize the transfer efficiency.
-            Based on our observation, we design a two-stage transfer framework named <b>VPGTrans</b>, which is simple yet highly effective.
-            Through extensive experiments, we demonstrate that VPGTrans helps significantly speed up the transfer learning process without compromising performance.
-            Remarkably, it helps achieve the VPG transfer from BLIP-2 OPT<sub>2.7B</sub> to BLIP-2 OPT<sub>6.7B</sub> with over 10 times speed-up and 10.7% training data compared with connecting a VPG to OPT<sub>6.7B</sub> from scratch.
-            Further, a series of intriguing findings and potential rationales behind them are provided and discussed.
-            Finally, we showcase the application value of our VPGTrans approach, by newly customizing two novel VL-LLMs, including <b>VL-LLaMA</b> and <b>VL-Vicuna</b>, with recently released LLaMA and Vicuna models.
-            <br>
-            <br>
-            With our VPGTrans, one can build a novel high-performance VL-LLM based on any existing text-based LLMs and an existing VPG with considerably lower cost. For example, the BLIP-2 traing cost can be reduced strikingly:
-            <!-- Our work will show great potential in the multimodal LLM community. -->
+            Remarkably, using <b>1.4k</b> annotated data samples, RLHF-V significantly reduces the hallucination rate of the base MLLM by <b>34.8%</b>, outperforming the concurrent LLaVA-RLHF trained on 10k annotated data. The final model achieves state-of-the-art performance in trustworthiness among open-source MLLMs, and shows better robustness than GPT-4V in preventing hallucinations aroused from over-generalization.
             <br>
 <!--             <br>
             The
