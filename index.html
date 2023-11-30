@@ -366,7 +366,7 @@
                 <b style="font-family:Arial, Helvetica, sans-serif">High Data Efficiency and Scalability</b>: <span style="font-size: 95%;">With just 1.4K annotated data, we achieved a 34.8% reduction in model hallucinations. Moreover, the decrease in hallucinations becomes more significant as more data used.</span>
               </li>
               <li>
-                <b style="font-family:Arial, Helvetica, sans-serif">Enhanced Performance and Computational Efficiency</b>: <span style="font-size: 95%;">Our fine-grained correctional human feedback data can better credit the desired behavior, allowing training in under 1 hour on 8 A100 GPUs to achieve promising results.</span>
+                <b style="font-family:Arial, Helvetica, sans-serif">Enhanced Performance and Computational Efficiency</b>: <span style="font-size: 95%;">Our fine-grained correctional human feedback data can better credit the desired behavior, allowing efficient training in 1 hour on 8 A100 GPUs to achieve promising results.</span>
               </li>
               <li>
                 <b style="font-family:Arial, Helvetica, sans-serif">Outstanding Trustworthiness without Compromising Helpfulness</b>: <span style="font-size: 95%;">Our model surpasses existing open-source MLLMs in reducing hallucination rates, mitigates hallucination from over-generalization, and maintains informativeness.</span>
@@ -465,6 +465,9 @@
         <div class="content has-text-justified">
           <p>
             <b>The proposed RLHF-V framework</b>:
+            We collect [fine-grained dense feedback data](https://huggingface.co/datasets/HaoyeZhang/RLHF-V-Hall_v0/tree/main) by asking human annotators to correct the hallucinated segments in model responses.
+
+            For training, it takes only one hour with 8 A100 GPUs to get [our model](https://huggingface.co/openbmb/RLHF-V_v0) which is initialized from our [SFT model](https://huggingface.co/Yirany/RLHF-V_v0_SFT/tree/main).
           </p>
           <ul>
             <!-- <li>It has two types of queries (latent queries and text queries) and outputs (semantic outputs and pixel-level outputs).</li>
